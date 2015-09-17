@@ -1,0 +1,13 @@
+<div id="loginBox">
+    <div>
+        <%= form_for(@session) do |f| %>
+        <%= f.text_field :email %>
+        <%= f.text_field :password %>
+        <%= f.submit "Sign In" %>
+        <% end %>
+        <!-- email: <input type="text" name="email">
+        password: <input type="text" name="password">
+        <a href="/sessions">Sign In</a>
+        <input type="submit" value="Sign In"> -->
+    </div>
+</div>

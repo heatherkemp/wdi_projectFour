@@ -1,13 +1,21 @@
-<div id="loginBox">
-    <div>
-        <%= form_for(@session) do |f| %>
-        <%= f.text_field :email %>
-        <%= f.text_field :password %>
-        <%= f.submit "Sign In" %>
+<div class="row">
+  <div class="small-11 small-centered large-4 columns">
+    <div id="loginBox">
+<%= form_tag("/sessions", method: "post") do %>
+        <%= label_tag "Email:" %>
+        <%= email_field_tag :email %>
+        <%= label_tag "Password:" %>
+        <%= password_field_tag :password %>
+        <%= submit_tag "Sign In" %>
         <% end %>
-        <!-- email: <input type="text" name="email">
-        password: <input type="text" name="password">
-        <a href="/sessions">Sign In</a>
-        <input type="submit" value="Sign In"> -->
+
+        <div class="newUser">
+            <p class="blackText">New User? &nbsp;</p>
+            <%= form_tag("/welcome/new", method: "get") do %>
+            <%= submit_tag "Create An Account" %>
+            <% end %>
+           <!--  <input type="submit" value="Create An Account"> -->
+        </div>
     </div>
+  </div>
 </div>

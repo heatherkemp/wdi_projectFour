@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get '/welcome/new' => 'welcome#new'
+
+  resources :accounts
+
   namespace :api do
     resources :users do
       resources :jobs
